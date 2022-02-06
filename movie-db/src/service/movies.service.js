@@ -22,6 +22,10 @@ function ApiMovies() {
         return axiosService.get(`movie?api_key=${apiKey}&with_genres=${genreId}&page=${page}`).then((response) => response.data.results);
     }
 
+    this.fetchMoviesByGenre = (genreId, page) => {
+        return axiosService.get(`movie?api_key=${apiKey}&with_genres=${genreId}&page=${page}`).then((response) => response.data.results);
+    }
+
    
 };
 

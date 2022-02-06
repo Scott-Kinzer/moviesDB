@@ -23,7 +23,7 @@ export default function SliderComponent() {
             <Swiper
                 spaceBetween={20}
                 autoHeight={true} 
-                slidesPerView={5}
+                slidesPerView={6}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}>
                     

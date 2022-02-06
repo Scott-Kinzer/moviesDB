@@ -8,28 +8,38 @@ import s from './sidebar.module.css';
 export default function SideBar({toggle, setIsModalVisibleFunc}) {
 
 
-   const {name, username, city} = useSelector(state => state.userReducer.user);
+  const {name, username, city} = useSelector(state => state.userReducer.user);
 
   return (
     <div className={!toggle ? s.sideBarWrapper : s.sideBarWrapperHidden}>
 
       <div className={s.userInfoWrapper}>
             <img src="https://cdn.mos.cms.futurecdn.net/CAZ6JXi6huSuN4QGE627NR-320-80.jpg" alt="" />
-            <div>
+            <div style={{    padding: "5px",
+                            background: "darkgrey",
+                            width: "100%",
+                            marginTop: "5px",
+                            borderRadius: "5px"
+}}>
                 <div>{name} {username}</div>
                 <div>{city}</div>
             </div>
       </div>
         <hr />
       <div className={s.navWrap}>
-          <div  className={s.item}><NavLink style={{textDecoration: 'none', color: 'black'}} to="/">HOME PAGE</NavLink></div>
-          <div  className={s.item}><NavLink style={{textDecoration: 'none', color: 'black'}} to="movies">MOVIES</NavLink></div>
-          <div  className={s.item}><NavLink style={{textDecoration: 'none', color: 'black'}} to="tv">TV SHOW</NavLink></div>
-          <div  className={s.item}><NavLink style={{textDecoration: 'none', color: 'black'}} to="people">PEOPLE</NavLink></div>
+      <NavLink style={{textDecoration: 'none', color: 'black', opacity: '1', display: 'block'}} to="/"><div  className={s.item}>HOME PAGE</div></NavLink>
+          
+      <NavLink style={{textDecoration: 'none', color: 'black', opacity: '1'}} to="/movies"><div  className={s.item}>MOVIES</div></NavLink>
+
+      <NavLink style={{textDecoration: 'none', color: 'black', opacity: '1'}} to="/tv"><div  className={s.item}>TV SHOW</div></NavLink>
+
+      <NavLink style={{textDecoration: 'none', color: 'black', opacity: '1'}} to="/people"><div  className={s.item}>PEOPLE</div></NavLink>
       </div>
-      <Button onClick={() => setIsModalVisibleFunc(true)}>
-          SETTINGS
+      <Button style={{marginTop: '10px'}} onClick={() => setIsModalVisibleFunc(true)}>
+          SETTING
       </Button>
+
+      <div className={s.blur}></div>
 
       </div>
       

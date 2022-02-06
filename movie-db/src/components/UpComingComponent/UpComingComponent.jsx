@@ -11,7 +11,7 @@ export default function UpComingComponent() {
 
     const [moviesUpComing, setMovies] = useState([]);
 
-    const [numbers, setNumbers] = useState(2);
+    const [numbers, setNumbers] = useState(5);
 
     const [disable, setDisabled] = useState(false);
 

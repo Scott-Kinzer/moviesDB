@@ -26,6 +26,7 @@ export default function Header({toggle,setToggle}) {
 
     return (
         <div className={`${s.header} ${small ? s.small : ""} `}>
+            <div className={s.blur}></div>
             <div>
                 {!toggle ? 
                 
@@ -33,13 +34,13 @@ export default function Header({toggle,setToggle}) {
 
                 onClick={() => setToggle(true)}
 
-                style={{ fontSize: '30px', color: '#08c'}} />):
+                style={{ fontSize: '30px', color: 'rgb(255 225 235)'}} />):
 
                (<RightOutlined 
 
                 onClick={() => setToggle(false)} 
                 
-                style={{ fontSize: '30px', color: '#08c'}} />)
+                style={{ fontSize: '30px', color: 'rgb(255 225 235)'}} />)
             
     
             }

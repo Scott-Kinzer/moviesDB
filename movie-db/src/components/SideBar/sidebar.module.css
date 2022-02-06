@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5px;
     box-sizing: border-box;
     position: sticky;
     top: 0;
@@ -15,38 +14,67 @@
 
 .sideBarWrapperHidden {
     width: 0;
-    transition: 2s;
+    /* transition: 0.5s; */
     position: relative;
-    transform: translateX(-400px);
+    transform: translateY(-400px);
 }
 
 .navWrap {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .navWrap div {
+    width: 100%;
     margin-top: 5px;
+}
+
+.navWrap a {
+    width: 100%;
+    display: block;
 }
 
 .userInfoWrapper img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    
+
 }
 
 .userInfoWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 5px;
 }
 .item {
-    width: 100px;
+   
     display: flex;
     justify-content: center;
-    padding: 3px;
+    padding: 9px;
     background: rgb(224, 118, 171);
     color: black;
+    opacity: 0.5;
+}
+
+.item:hover {
+    opacity: 0.8;
+}
+
+.blur {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -10;
+    display: block;
+    background-image: url('https://i.imgur.com/lL6tQfy.png');
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(35px);
 }

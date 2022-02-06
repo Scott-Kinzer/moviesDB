@@ -6,7 +6,7 @@
 
 .subLayoutWrapper {
     width: 85%;
-    transition: 2s;
+    /* transition: 1s; */
     display: flex;
     flex-direction: column;
     padding-top: 60px;
@@ -14,7 +14,7 @@
 
 .subLayoutWrapperFull {
     width: 100%;
-    transition: 2s;
+    /* transition: 1s; */
     display: flex;
     flex-direction: column;
     padding-top: 60px;
