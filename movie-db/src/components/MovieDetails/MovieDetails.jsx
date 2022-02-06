@@ -1,6 +1,7 @@
 import { Button } from 'antd';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ThemeContext } from '../../context/context';
 import apiIntance from '../../service/movies.service';
 import MovieItem from '../MovieItem/MovieItem';
 
@@ -14,6 +15,7 @@ export default function MovieDetails() {
 
   const [manualTrigger, setManualTrigger] = useState(false);
 
+  const { mode } = useContext(ThemeContext);
 
   const [randommovieDetails, setRandomMovieDetails] = useState(null);
 
@@ -33,7 +35,7 @@ export default function MovieDetails() {
     setManualTrigger(!manualTrigger);
   }
 
-  return (<div className={s.detailsWrapper}>
+  return (<div className={s.detailsWrapper, mode ? s.dark: ""} >
 
     {movieDetails && 
     <>

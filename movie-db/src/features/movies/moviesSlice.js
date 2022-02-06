@@ -11,20 +11,30 @@ export const movieSlice = createSlice({
     initialState,
     reducers: {
   
-      changeInitials: (state, action) => {
-          state.user = {
-              ...state.user,
-              ...action.payload
-          }
-      },
-
       addMoviesToCart: (state, action) => {
           const checking = state.moviesCart.find(movie => movie.id === action.payload.id);
           if (!checking) {
             state.moviesCart.push(action.payload);
           }
         
-    }
+    },
+
+    removeMovieAtCart: (state, action) => {
+      state.moviesCart = state.moviesCart.filter(movie => movie.id !== action.payload);
+},  
+    setStar:(state, action) => {
+      state.moviesCart = state.moviesCart.map(movie => {
+        if (movie.id === action.payload.id) {
+          return {
+            ...movie,
+            rating: action.payload.star
+          }
+        }
+
+        return movie;
+      });
+
+    } 
   
     },
 
@@ -34,6 +44,6 @@ export const movieSlice = createSlice({
 
   
   // Action creators are generated for each case reducer function
-  export const { changeInitials, addMoviesToCart} = movieSlice.actions;
+  export const { removeMovieAtCart, addMoviesToCart, setStar} = movieSlice.actions;
   
   export default movieSlice.reducer;

@@ -7,7 +7,7 @@ import { ThemeContext } from '../../context/context';
 import s from './header.module.css';
 
 
-export default function Header({toggle,setToggle}) {
+export default function Header({toggle,setToggle, setIsModalBookVisible}) {
 
     const {mode, setMode} = useContext(ThemeContext);
 
@@ -41,8 +41,6 @@ export default function Header({toggle,setToggle}) {
                 onClick={() => setToggle(false)} 
                 
                 style={{ fontSize: '30px', color: 'rgb(255 225 235)'}} />)
-            
-    
             }
             </div>
 
@@ -51,10 +49,13 @@ export default function Header({toggle,setToggle}) {
             <div style={{display: 'flex'}}>
                 <AlertOutlined onClick={() => setMode(!mode)} style={mode ? { fontSize: '30px', color: 'white'}: 
                 { fontSize: '30px', color: 'black'}} />
+            <div 
+               
+                style={{position: 'relative'}}>
+                    <SaveOutlined 
 
-
-                <div style={{position: 'relative'}}>
-                    <SaveOutlined style={ { fontSize: '30px', color: 'black', marginLeft: '15px'}} />
+                    onClick={() => setIsModalBookVisible(true)}
+                    style={ { fontSize: '30px', color: 'black', marginLeft: '15px'}} />
                     <div style={{position: 'absolute', right: '-4px',fontSize: '15px', top: '-16px', fontWeight: 'bolder'}}>{count}</div>
                 </div>
                 

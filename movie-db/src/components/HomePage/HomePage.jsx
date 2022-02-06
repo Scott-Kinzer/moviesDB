@@ -12,6 +12,8 @@ export default function HomePage() {
     return <div className={mode ? s.homeModeOn : s.homeModeOff
      }>
         <SliderComponent />
+
+        
         <UpComingComponent/>
 
     

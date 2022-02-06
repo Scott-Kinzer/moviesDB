@@ -19,7 +19,7 @@ export default function MovieItem({ movie }) {
                 </NavLink>
                 <FileAddOutlined
                 onClick={() => {
-                    dispatch(addMoviesToCart(movie));                    
+                    dispatch(addMoviesToCart({...movie, rating: 0}));                    
                 }}
                 
                 style={{
