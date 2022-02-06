@@ -11,7 +11,10 @@ import HomePage from './components/HomePage/HomePage';
 
 import { useState } from 'react';
 import { ThemeContext } from './context/context';
+import MovieDetails from './components/MovieDetails/MovieDetails';
 
+import 'antd/dist/antd.css';
+import './index.css';
 
 function App() {
 
@@ -24,6 +27,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index  element={<HomePage />} />
+          <Route path='/movie/:movieId'  element={<MovieDetails />} />
+
         </Route>
       </Routes>
       </div>

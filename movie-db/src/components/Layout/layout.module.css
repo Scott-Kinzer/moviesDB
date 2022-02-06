@@ -1,11 +1,11 @@
 .layoutWrapper {
     display: flex;
     /* min-height: 1500px; */
+    height: 100%;
 }
 
 .subLayoutWrapper {
     width: 85%;
-    height: 100vh;
     transition: 2s;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,6 @@
 
 .subLayoutWrapperFull {
     width: 100%;
-    height: 100vh;
     transition: 2s;
     display: flex;
     flex-direction: column;

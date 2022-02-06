@@ -1,0 +1,18 @@
+.movieItem {
+    width: 200px;
+    position: relative;
+    margin: 20px 5px 5px 5px;
+}
+
+.movieItem:hover {
+    transform: scale(1.1);
+    transition: 0.6s;
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+
+
+
+.movieItem img {
+    border-radius: 10px;
+}

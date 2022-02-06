@@ -1,0 +1,10 @@
+.UpComingWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.UpComingWrapperSub {
+    display: flex;
+    flex-wrap: wrap;
+}
+

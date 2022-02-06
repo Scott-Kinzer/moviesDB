@@ -1,0 +1,7 @@
+.homeModeOn {
+ background: grey; padding: 10px;
+}
+
+.homeModeOff {
+    background: white; padding: 10px;
+   }

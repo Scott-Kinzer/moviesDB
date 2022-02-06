@@ -17,7 +17,7 @@ export default function Layout() {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     return (
-        <>
+        <div>
         <div className={s.layoutWrapper}>
             <SideBar toggle={toggle} setIsModalVisibleFunc={setIsModalVisible} />
             <div className={!toggle ? s.subLayoutWrapper : s.subLayoutWrapperFull}>
@@ -29,11 +29,8 @@ export default function Layout() {
             
            {isModalVisible && (
            <>
-            {/* <div onClick={() => {
-                console.log('click');
-            }} className={s.opacityWrapper}></div> */}
             <SettingsComponent  setIsModalVisible={setIsModalVisible} isModalVisible={isModalVisible}/>
            </>) }
-        </>
+        </div>
     );
 }
