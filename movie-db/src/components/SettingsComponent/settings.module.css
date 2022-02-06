@@ -1,0 +1,27 @@
+.moduleVisible {
+    width: 800px;
+    height: 400px;
+    background: palegreen;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: flex-end; */
+}
+
+form label {
+    width: 500px;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+    align-items: center;
+   
+}
+
+form label input {
+    margin-left: 10px;
+}
