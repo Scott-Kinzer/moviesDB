@@ -1,5 +1,6 @@
 import { AlertOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons/lib/icons';
 import React, { useContext, useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { ThemeContext } from '../../context/context';
 
 import s from './header.module.css';
@@ -41,7 +42,7 @@ export default function Header({toggle,setToggle}) {
             }
             </div>
 
-            <div className={s.title}>MOVIE DB</div>
+           <NavLink to="/"> <h2 className={s.title}>MOVIE DB</h2></NavLink>
 
             <div>
                 <AlertOutlined onClick={() => setMode(!mode)} style={mode ? { fontSize: '30px', color: 'white'}: 

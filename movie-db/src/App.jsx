@@ -15,6 +15,7 @@ import MovieDetails from './components/MovieDetails/MovieDetails';
 
 import 'antd/dist/antd.css';
 import './index.css';
+import Movies from './components/Movies/Movies';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index  element={<HomePage />} />
           <Route path='/movie/:movieId'  element={<MovieDetails />} />
+          <Route path="/movies"  element={<Movies />} />
 
         </Route>
       </Routes>

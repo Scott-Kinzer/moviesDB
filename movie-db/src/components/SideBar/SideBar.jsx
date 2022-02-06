@@ -22,10 +22,10 @@ export default function SideBar({toggle, setIsModalVisibleFunc}) {
       </div>
         <hr />
       <div className={s.navWrap}>
-          <div><NavLink style={{textDecoration: 'none'}} to="/">HOME PAGE</NavLink></div>
-          <div><NavLink style={{textDecoration: 'none'}} to="movies">MOVIES</NavLink></div>
-          <div><NavLink style={{textDecoration: 'none'}} to="tv">TV SHOW</NavLink></div>
-          <div><NavLink style={{textDecoration: 'none'}} to="people">PEOPLE</NavLink></div>
+          <div  className={s.item}><NavLink style={{textDecoration: 'none', color: 'black'}} to="/">HOME PAGE</NavLink></div>
+          <div  className={s.item}><NavLink style={{textDecoration: 'none', color: 'black'}} to="movies">MOVIES</NavLink></div>
+          <div  className={s.item}><NavLink style={{textDecoration: 'none', color: 'black'}} to="tv">TV SHOW</NavLink></div>
+          <div  className={s.item}><NavLink style={{textDecoration: 'none', color: 'black'}} to="people">PEOPLE</NavLink></div>
       </div>
       <Button onClick={() => setIsModalVisibleFunc(true)}>
           SETTINGS
