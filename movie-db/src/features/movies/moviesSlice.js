@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     movies: [],
-    genres: []
+    genres: [],
+    moviesCart: []
 }
 
 export const movieSlice = createSlice({
@@ -16,13 +17,23 @@ export const movieSlice = createSlice({
               ...action.payload
           }
       },
-  
+
+      addMoviesToCart: (state, action) => {
+          const checking = state.moviesCart.find(movie => movie.id === action.payload.id);
+          if (!checking) {
+            state.moviesCart.push(action.payload);
+          }
+        
     }
+  
+    },
+
+    
  
   })
 
   
   // Action creators are generated for each case reducer function
-  export const { changeInitials} = userSlice.actions;
+  export const { changeInitials, addMoviesToCart} = movieSlice.actions;
   
-  export default userSlice.reducer;
+  export default movieSlice.reducer;

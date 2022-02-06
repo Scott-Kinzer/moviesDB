@@ -1,11 +1,15 @@
 import { FileAddOutlined } from '@ant-design/icons/lib/icons';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { addMoviesToCart } from '../../features/movies/moviesSlice';
 
 
 import s from './movie.item.module.css';
 
 export default function MovieItem({ movie }) {
+
+    const dispatch = useDispatch();
 
     return (
             <div className={s.movieItem}>
@@ -14,9 +18,8 @@ export default function MovieItem({ movie }) {
                 <div className={s.itemTitle}>{movie.original_title}</div>
                 </NavLink>
                 <FileAddOutlined
-                onClick={(e) => {
-                    e.stopPropagation();
-                    console.log('hello');
+                onClick={() => {
+                    dispatch(addMoviesToCart(movie));                    
                 }}
                 
                 style={{
