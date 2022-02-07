@@ -15,16 +15,14 @@ function ApiMovies() {
     }
 
     this.fetchMoviesGenres = () => {
-        return axiosService.get(`genre/movie/list?api_key=${apiKey}&language=en-US`).then((response) => response.data.results);
+        return axiosService.get(`genre/movie/list?api_key=${apiKey}&language=en-US`).then((response) => response.data.genres);
     }
 
     this.fetchMoviesByGenre = (genreId, page) => {
-        return axiosService.get(`movie?api_key=${apiKey}&with_genres=${genreId}&page=${page}`).then((response) => response.data.results);
+        return axiosService.get(`/discover/movie?api_key=${apiKey}&with_genres=${genreId.value}&page=${page}`).then((response) => response.data.results);
     }
 
-    this.fetchMoviesByGenre = (genreId, page) => {
-        return axiosService.get(`movie?api_key=${apiKey}&with_genres=${genreId}&page=${page}`).then((response) => response.data.results);
-    }
+
 
    
 };

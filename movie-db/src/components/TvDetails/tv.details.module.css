@@ -1,0 +1,15 @@
+.dark {
+    background: gray;
+}
+
+.tvWrapper {
+    display: flex;
+}
+
+.tvDescrWrapper {
+    display: flex;
+}
+
+.tvDescrWrapper div {
+    margin: 10px;
+}

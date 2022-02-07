@@ -13,10 +13,19 @@ export default function MovieItem({ movie }) {
 
     return (
             <div className={s.movieItem}>
-                <NavLink to={`/movie/${movie.id}`}>
-                {movie.poster_path && <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="" />}
-                <div className={s.itemTitle}>{movie.original_title}</div>
-                </NavLink>
+                {movie.name ? 
+                  <NavLink to={`/tv/${movie.id}`}>
+                  {movie.poster_path && <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="" />}
+                  <div className={s.itemTitle}>{movie.original_title ||  movie.name }</div>
+                  </NavLink> :
+
+                    <NavLink to={`/movie/${movie.id}`}>
+                    {movie.poster_path && <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt="" />}
+                    <div className={s.itemTitle}>{movie.original_title ||  movie.name }</div>
+                    </NavLink>
+            
+            }
+   
                 <FileAddOutlined
                 onClick={() => {
                     dispatch(addMoviesToCart({...movie, rating: 0}));                    

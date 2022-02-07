@@ -1,7 +1,9 @@
 .homeModeOn {
  background: grey; padding: 10px;
+ padding: 15px;
 }
 
 .homeModeOff {
     background: white; padding: 10px;
+    padding: 15px;
    }

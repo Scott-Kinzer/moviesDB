@@ -1,10 +1,34 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
+import apiIntance from './../../service/movies.service';
+
+export const fetchGenres = createAsyncThunk(
+  'movies/fetchGenres',
+  async (_, {dispatch}) => {
+    const response = await apiIntance.fetchMoviesGenres();
+
+    dispatch(setUpGenres(response));
+  }
+);
+
+
+
+export const fetchGenresMovies = createAsyncThunk(
+  'movies/fetchGenresMovies',
+  async ({genreId, pageId}, {dispatch}) => {
+    const response = await apiIntance.fetchMoviesByGenre(genreId, pageId);
+    dispatch(setUpMoviesGenres(response));
+  }
+);
+
 const initialState = {
     movies: [],
     genres: [],
     moviesCart: []
 }
+
+
+
 
 export const movieSlice = createSlice({
     name: 'movies/moviesSlice',
@@ -34,7 +58,14 @@ export const movieSlice = createSlice({
         return movie;
       });
 
-    } 
+    } , 
+    setUpGenres:(state, action)  =>{
+      state.genres = action.payload;
+    },
+
+    setUpMoviesGenres:(state, action)  =>{
+      state.movies = action.payload;
+    }
   
     },
 
@@ -44,6 +75,6 @@ export const movieSlice = createSlice({
 
   
   // Action creators are generated for each case reducer function
-  export const { removeMovieAtCart, addMoviesToCart, setStar} = movieSlice.actions;
+  export const { removeMovieAtCart, addMoviesToCart, setStar, setUpGenres, setUpMoviesGenres} = movieSlice.actions;
   
   export default movieSlice.reducer;
